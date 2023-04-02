@@ -1,0 +1,87 @@
+.container{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.card{
+  height: 500px;
+  width: 360px;
+  margin: 100px 10px 10px 10px;
+}
+
+.card__inner {
+	position: relative;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 0.5s;
+}
+.card:hover .card__inner {
+	transform: rotateY(180deg);
+}
+.card__body {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	backface-visibility: hidden;
+	border-radius: 8px;
+	box-shadow: 0 5px 10px
+		rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+
+}
+.card__body--front--squirtle {
+	background-image: radial-gradient(
+		circle 248px at center,
+		#16d9e3 0%,#30c7ec 47%,
+		#46aef7 100%
+	);
+  border: 10px solid rgb(255, 217, 0);
+}
+
+.card__body--front--pikachu {
+	background-image: radial-gradient(
+		circle 248px at center,
+		#e3d216 0%,#ecdc30 47%,
+		#f7ee46 100%
+	);
+  border: 10px solid rgb(255, 217, 0);
+}
+
+.card__body--front--mewtwo {
+	background-image: radial-gradient(
+		circle 248px at center,
+		#9b16e3 0%,#b030ec 47%,
+		#c846f7 100%
+	);
+  border: 10px solid rgb(255, 217, 0);
+}
+
+.card__body--back {
+	background-image: url(../assets/images/card-back-pokemon.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+	transform: rotateY(180deg);
+}
+
+.pokemon-image{
+  height: 220px;
+  width: 325px;
+}
+
+.name-pokemon{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hp-pokemon{
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.number-hp-pokemon{
+  font-size: 20px;
+  font-weight: bold;
+}
