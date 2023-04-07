@@ -3,7 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { CardPokemonComponent } from './page/card-pokemon/card-pokemon.component';
 
 const routes: Routes = [
-  { path: 'card', component: CardPokemonComponent },
+  {
+    path: '',
+    component: CardPokemonComponent,
+    children: [
+      { path: 'card', component: CardPokemonComponent },
+      { path: '**', pathMatch: 'full', redirectTo: 'card' }
+    ]
+  }
 ];
 
 []
