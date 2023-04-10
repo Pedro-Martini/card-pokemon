@@ -16,12 +16,12 @@ export class CardPokemonComponent implements OnInit {
   constructor(private searchPokemonsService: SearchPokemonsService) { }
 
   ngOnInit(): void {
-    this.search1();
-    this.search2();
-    this.search3();
+    this.searchSquirtle();
+    this.searchPikachu();
+    this.searchMewtwo();
   }
 
-  search1(){
+  searchSquirtle(){
     this.searchPokemonsService.searchPokemonSquirtle().subscribe({
       next: (dados) => {
         this.objectSquirtle = dados;
@@ -36,7 +36,7 @@ export class CardPokemonComponent implements OnInit {
     })
   }
 
-  search2(){
+  searchPikachu(){
     this.searchPokemonsService.searchPokemonPikachu().subscribe({
       next: (dados) => {
         this.objectPikachu = dados;
@@ -51,7 +51,7 @@ export class CardPokemonComponent implements OnInit {
     })
   }
 
-  search3(){
+  searchMewtwo(){
     this.searchPokemonsService.searchPokemonMewtwo().subscribe({
       next: (dados) => {
         this.objectMewto = dados;
