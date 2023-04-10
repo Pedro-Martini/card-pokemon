@@ -14,18 +14,18 @@ export class SearchPokemonsService {
 
   constructor(private http: HttpClient) { }
 
-  searchPokemonMewtwo(): Observable<ResultPokemons[]>{
-    const result = this.http.get<ResultPokemons[]>(API_URL + 'pokemon/mewtwo')
+  searchPokemonMewtwo(): Observable<ResultPokemons>{
+    const result = this.http.get<ResultPokemons>(API_URL + 'pokemon/mewtwo')
     return result
   }
 
-  searchPokemonSquirtle(): Observable<ResultPokemons[]>{
-    const result = this.http.get<ResultPokemons[]>(API_URL + 'pokemon/squirtle')
+  searchPokemonSquirtle(): Observable<ResultPokemons>{
+    const result = this.http.get<ResultPokemons>(API_URL + 'pokemon/squirtle')
     return result
   }
 
-  searchPokemonPikachu(): Observable<ResultPokemons[]>{
-    const result = this.http.get<ResultPokemons[]>(API_URL + 'pokemon/pikachu')
+  searchPokemonPikachu(): Observable<ResultPokemons>{
+    const result = this.http.get<ResultPokemons>(API_URL + 'pokemon/pikachu')
     return result
   }
 

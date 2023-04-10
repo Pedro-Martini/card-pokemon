@@ -1,3 +1,4 @@
+import { ResultPokemons } from 'src/app/model/result-pokemons';
 import { SearchPokemonsService } from './../../service/search-pokemons.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardPokemonComponent implements OnInit {
 
+  objectSquirtle!: ResultPokemons;
+  objectPikachu!: ResultPokemons;
+  objectMewto!: ResultPokemons;
+
   constructor(private searchPokemonsService: SearchPokemonsService) { }
 
   ngOnInit(): void {
@@ -17,15 +22,15 @@ export class CardPokemonComponent implements OnInit {
   }
 
   search1(){
-    this.searchPokemonsService.searchPokemonMewtwo().subscribe({
+    this.searchPokemonsService.searchPokemonSquirtle().subscribe({
       next: (dados) => {
-        console.log(dados)
+        this.objectSquirtle = dados;
       },
       error: (erro) => {
         if (erro.status == 400) {
-          console.log('Ocorreu um erro na pesquisa.')
+          alert('Ocorreu um erro na pesquisa.')
         } else {
-          console.log('Ocorreu um erro na pesquisa.')
+          alert('Ocorreu um erro na comunicação.')
         }
       }
     })
@@ -34,34 +39,32 @@ export class CardPokemonComponent implements OnInit {
   search2(){
     this.searchPokemonsService.searchPokemonPikachu().subscribe({
       next: (dados) => {
-        console.log(dados)
+        this.objectPikachu = dados;
       },
       error: (erro) => {
         if (erro.status == 400) {
-          console.log('Ocorreu um erro na pesquisa.')
+          alert('Ocorreu um erro na pesquisa do pokemon.')
         } else {
-          console.log('Ocorreu um erro na pesquisa.')
+          alert('Ocorreu um erro na comunicação.')
         }
       }
     })
   }
 
   search3(){
-    this.searchPokemonsService.searchPokemonSquirtle().subscribe({
+    this.searchPokemonsService.searchPokemonMewtwo().subscribe({
       next: (dados) => {
-        console.log(dados)
+        this.objectMewto = dados;
       },
       error: (erro) => {
         if (erro.status == 400) {
-          console.log('Ocorreu um erro na pesquisa.')
+          alert('Ocorreu um erro na pesquisa do pokemon.')
         } else {
-          console.log('Ocorreu um erro na pesquisa.')
+          alert('Ocorreu um erro na comunicação.')
         }
       }
     })
   }
-
-
 }
 
 
