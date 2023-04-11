@@ -1,0 +1,11 @@
+version: "3"
+services:
+  gocdagent:
+    build:
+      dockerfile: ./dockerfile
+    image: card-pokemon
+    privileged: true
+    deploy:
+      replicas: 1
+    ports:
+      - "8080:8080"
