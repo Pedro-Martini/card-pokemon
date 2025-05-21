@@ -1,13 +1,13 @@
 <div class="container">
   <!-- Card para Squirtle (tipo água) -->
-  <div class="card" *ngIf="objectSquirtle.name === 'Squirtle'">
+  <div class="card">
     <div class="card__inner">
       <!-- Frente do card -->
       <div class="card__body card__body--front--squirtle">
         <!-- Cabeçalho com nome e HP -->
         <div class="card-header">
           <div class="pokemon-name">{{objectSquirtle.name}}</div>
-          <div class="pokemon-hp">{{objectSquirtle.stats[5].stat.name}} <span class="energy-icon water"></span></div>
+          <div class="pokemon-hp">{{objectSquirtle.weight}} <span class="energy-icon water"></span></div>
         </div>
         
         <!-- Container da imagem -->
@@ -52,14 +52,14 @@
   </div>
   
   <!-- Card para Pikachu (tipo elétrico) -->
-  <div class="card" *ngIf="objectPikachu.name === 'Pikachu'">
+  <div class="card">
     <div class="card__inner">
       <!-- Frente do card -->
       <div class="card__body card__body--front--pikachu">
         <!-- Cabeçalho com nome e HP -->
         <div class="card-header">
           <div class="pokemon-name">{{objectPikachu.name}}</div>
-          <div class="pokemon-hp">{{objectPikachu.stats[5].stat.name}} <span class="energy-icon electric"></span></div>
+          <div class="pokemon-hp">{{objectPikachu.weight}} <span class="energy-icon electric"></span></div>
         </div>
         
         <!-- Container da imagem -->
@@ -104,14 +104,14 @@
   </div>
   
   <!-- Card para Mewtwo (tipo psíquico) -->
-  <div class="card" *ngIf="objectMewto.name === 'Mewtwo'">
+  <div class="card">
     <div class="card__inner">
       <!-- Frente do card -->
       <div class="card__body card__body--front--mewtwo">
         <!-- Cabeçalho com nome e HP -->
         <div class="card-header">
           <div class="pokemon-name">{{objectMewto.name}}</div>
-          <div class="pokemon-hp">{{objectMewto.stats[5].stat.name}} <span class="energy-icon psychic"></span></div>
+          <div class="pokemon-hp">{{objectMewto.weight}} <span class="energy-icon psychic"></span></div>
         </div>
         
         <!-- Container da imagem -->
