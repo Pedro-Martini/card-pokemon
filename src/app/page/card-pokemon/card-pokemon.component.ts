@@ -30,7 +30,6 @@ export class CardPokemonComponent implements OnInit {
   }
 
   loadPokemonData(): void {
-    // Carrega dados do Squirtle usando o método correto
     this.SearchPokemonsService.searchPokemonSquirtle()
       .pipe(
         catchError(error => {
@@ -39,7 +38,6 @@ export class CardPokemonComponent implements OnInit {
           return of(null);
         }),
         finalize(() => {
-          // Verifica se todos os Pokémon foram carregados ou tiveram erro
           this.checkLoadingComplete();
         })
       )
@@ -49,7 +47,6 @@ export class CardPokemonComponent implements OnInit {
         }
       });
     
-    // Carrega dados do Pikachu usando o método correto
     this.SearchPokemonsService.searchPokemonPikachu()
       .pipe(
         catchError(error => {
@@ -67,7 +64,6 @@ export class CardPokemonComponent implements OnInit {
         }
       });
     
-    // Carrega dados do Mewtwo usando o método correto
     this.SearchPokemonsService.searchPokemonMewtwo()
       .pipe(
         catchError(error => {
@@ -86,7 +82,6 @@ export class CardPokemonComponent implements OnInit {
       });
   }
 
-  // Verifica se todos os Pokémon foram carregados ou tiveram erro
   private checkLoadingComplete(): void {
     if (
       (this.objectSquirtle !== null || this.squirtleError) &&
@@ -97,7 +92,6 @@ export class CardPokemonComponent implements OnInit {
     }
   }
 
-  // Método para tentar recarregar os dados em caso de erro
   reloadData(): void {
     this.loading = true;
     this.squirtleError = false;

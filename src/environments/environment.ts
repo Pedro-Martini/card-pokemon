@@ -1,6 +1,7 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://pokeapi.co/api/v2/'
+  apiUrl: 'https://pokeapi.co/api/v2/',
+  corsProxy : 'https://cors-anywhere.herokuapp.com/'
 };
 
 

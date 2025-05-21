@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
-const API_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -15,17 +14,17 @@ export class SearchPokemonsService {
   constructor(private http: HttpClient) { }
   
   searchPokemonSquirtle(): Observable<ResultPokemons>{
-    const result = this.http.get<ResultPokemons>(API_URL + 'pokemon/squirtle')
+    const result = this.http.get<ResultPokemons>(`${environment.corsProxy}${environment.apiUrl + 'pokemon/squirtle'}`)
     return result
   }
 
   searchPokemonPikachu(): Observable<ResultPokemons>{
-    const result = this.http.get<ResultPokemons>(API_URL + 'pokemon/pikachu')
+    const result = this.http.get<ResultPokemons>(`${environment.corsProxy}${environment.apiUrl + 'pokemon/pikachu'}`)
     return result
   }
   
   searchPokemonMewtwo(): Observable<ResultPokemons>{
-    const result = this.http.get<ResultPokemons>(API_URL + 'pokemon/mewtwo')
+    const result = this.http.get<ResultPokemons>(`${environment.corsProxy}${environment.apiUrl + 'pokemon/mewtwo'}`)
     return result
   }
 }
