@@ -1,103 +1,270 @@
-.container{
+/* Estilos base para o container */
+.container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  }
+  padding: 20px;
+}
 
-  .row{
-    width: 100%;
-  }
+/* Estilos para a linha */
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-  .card{
-    height: 500px;
-    width: 360px;
-    margin: 100px 10px 10px 10px;
-  }
+/* Estilos base para o card */
+.card {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 7/10;
+  margin: 20px 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .card__inner {
-    position: relative;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-  }
-  .card:hover .card__inner {
-    transform: rotateY(180deg);
-  }
-  .card__body {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    backface-visibility: hidden;
-    border-radius: 8px;
-    box-shadow: 0 5px 10px
-      rgba(0, 0, 0, 0.15);
-      border-radius: 10px;
+/* Estilos para o inner do card (para efeito de flip) */
+.card__inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
 
-  }
-  .card__body--front--squirtle {
-    background-image: radial-gradient(
-      circle 248px at center,
-      #16d9e3 0%,#30c7ec 47%,
-      #46aef7 100%
-    );
-    border: 10px solid rgb(255, 217, 0);
-  }
+/* Efeito hover para virar o card */
+.card:hover .card__inner {
+  transform: rotateY(180deg);
+}
 
-  .card__body--front--pikachu {
-    background-image: radial-gradient(
-      circle 248px at center,
-      #e3d216 0%,#ecdc30 47%,
-      #f7ee46 100%
-    );
-    border: 10px solid rgb(255, 217, 0);
-  }
+/* Estilos base para o corpo do card */
+.card__body {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
 
-  .card__body--front--mewtwo {
-    background-image: radial-gradient(
-      circle 248px at center,
-      #9b16e3 0%,#b030ec 47%,
-      #c846f7 100%
-    );
-    border: 10px solid rgb(255, 217, 0);
-  }
+/* Estilos específicos para o card de Squirtle (tipo água) */
+.card__body--front--squirtle {
+  background-color: #5090d8;
+  border: 8px solid #5090d8;
+  display: flex;
+  flex-direction: column;
+}
 
-  .card__body--back {
-    background-image: url(src/assets/images/card-back-pokemon.jpg);
-    background-repeat: no-repeat;
-    background-size:cover;
-    transform: rotateY(180deg);
+.card__body--front--squirtle .card-header {
+  background-color: #5090d8;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__body--front--squirtle .card-image-container {
+  background-color: #a8d0f0;
+  padding: 5px;
+  border: 5px solid #5090d8;
+  margin: 0 8px;
+}
+
+.card__body--front--squirtle .card-attacks {
+  background-color: #5090d8;
+  padding: 8px 12px;
+}
+
+.card__body--front--squirtle .attack {
+  background-color: #d8e8f8;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Estilos específicos para o card de Pikachu (tipo elétrico) */
+.card__body--front--pikachu {
+  background-color: #f8e060;
+  border: 8px solid #f8e060;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__body--front--pikachu .card-header {
+  background-color: #f8e060;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__body--front--pikachu .card-image-container {
+  background-color: #7cc0f0;
+  padding: 5px;
+  border: 5px solid #f8e060;
+  margin: 0 8px;
+}
+
+.card__body--front--pikachu .card-attacks {
+  background-color: #f8e060;
+  padding: 8px 12px;
+}
+
+.card__body--front--pikachu .attack {
+  background-color: #f8f8d8;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Estilos específicos para o card de Mewtwo (tipo psíquico) */
+.card__body--front--mewtwo {
+  background-color: #e890f8;
+  border: 8px solid #e890f8;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__body--front--mewtwo .card-header {
+  background-color: #e890f8;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__body--front--mewtwo .card-image-container {
+  background-color: #f0d0f8;
+  padding: 5px;
+  border: 5px solid #e890f8;
+  margin: 0 8px;
+}
+
+.card__body--front--mewtwo .card-attacks {
+  background-color: #e890f8;
+  padding: 8px 12px;
+}
+
+.card__body--front--mewtwo .attack {
+  background-color: #f8e8f8;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Estilos para o verso do card */
+.card__body--back {
+  background-image: url(src/assets/images/card-back-pokemon.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+/* Estilos para o nome do Pokémon */
+.pokemon-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Estilos para a seção de movimentos */
+.moves {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* Estilos para a imagem do Pokémon */
+.pokemon-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+}
+
+/* Estilos para os ícones de energia */
+.pokemon-image-energy {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Estilos para o nome do movimento */
+.move-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Estilos para a ordem do movimento */
+.move-order {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Estilos para a descrição do ataque */
+.attack-description {
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+/* Estilos para o custo do ataque */
+.attack-cost {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+/* Estilos para o dano do ataque */
+.attack-damage {
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Estilos para o rodapé do card */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para as informações do card */
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 12px;
+  font-size: 0.7rem;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 320px) {
+  .card {
+    max-width: 250px;
   }
   
-  .pokemon-name{
-    font-weight: bold;
-    font-size: 17px;
+  .pokemon-name, .move-name {
+    font-size: 0.9rem;
   }
-
-  .moves{
-    width: 100%;
-    height: 100vh;
+  
+  .attack-description {
+    font-size: 0.7rem;
   }
+}
 
-  .pokemon-image{
-    height: 220px;
-    width: 325px;
+@media (min-width: 768px) {
+  .card {
+    max-width: 350px;
   }
+}
 
-  .pokemon-image-energy{
-    height: 30px;
-    width: 30px;
+@media (min-width: 1200px) {
+  .card {
+    max-width: 400px;
   }
-
-  .move-name{
-    font-weight: bold;
-    font-size: 17px;
-  }
-
-  .move-order{
-    font-weight: bold;
-    font-size: 17px;
-  }
-
-
+}

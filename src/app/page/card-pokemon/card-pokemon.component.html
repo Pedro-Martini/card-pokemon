@@ -1,49 +1,160 @@
-<div class="container text-center">
-  <audio src="assets/audio/pokemon-abertura.mp3"></audio>
-
-  <article class="card">
+<div class="container">
+  <!-- Card para Squirtle (tipo água) -->
+  <div class="card" *ngIf="objectSquirtle.name === 'Squirtle'">
     <div class="card__inner">
+      <!-- Frente do card -->
       <div class="card__body card__body--front--squirtle">
-
-        <div class="row">
-          <div class="col">
-            <div class="pokemon">
-              <span class="pokemon-name">
-                {{objectSquirtle.name}}
-              </span>
-            </div>
-          </div>
+        <!-- Cabeçalho com nome e HP -->
+        <div class="card-header">
+          <div class="pokemon-name">{{objectSquirtle.name}}</div>
+          <div class="pokemon-hp">{{objectSquirtle.stats[5].stat.name}} <span class="energy-icon water"></span></div>
         </div>
-
-        <div class="row">
-          <div class="col">
-            <div class="image__water__pokemon">
-              <div class="image-pokemon">
-                <img src="assets/images/image-squirtle.jpg" alt="" class="img-fluid pokemon-image">
-              </div>
-            </div>
-          </div>
+        
+        <!-- Container da imagem -->
+        <div class="card-image-container">
+          <img src="assets/images/image-squirtle.jpg" alt="" class="pokemon-image">
         </div>
-
-        <div class="row">
-          <div class="moves">
-            <div class="col">
+        
+        <!-- Seção de ataques -->
+        <div class="card-attacks">
+          <div class="attack">
+            <div class="attack-name">{{objectSquirtle.moves[0].move.name}}</div>
+            <div class="attack-description">Durante o próximo turno do seu oponente, os ataques do Pokémon Defensor causarão 30 pontos de dano a menos.</div>
+          </div>
+          
+          <div class="attack">
+            <div class="attack-cost">
+              <img src="assets/images/energy-water.png" alt="" class="pokemon-image-energy">
               <img src="assets/images/energy-water.png" alt="" class="pokemon-image-energy">
             </div>
-            <div class="col">
-              <span class="move-name">
-                {{objectSquirtle.moves[16].move.name}}
-              </span>
-            </div>
-            <div class="col"></div>
-            <span class="move-order">
-              {{objectSquirtle.order}}
-            </span>
+            <div class="attack-name">{{objectSquirtle.moves[1].move.name}}</div>
+            <div class="attack-damage">30</div>
           </div>
         </div>
-
+        
+        <!-- Rodapé -->
+        <div class="card-footer">
+          <div class="weakness">Fraqueza <span>x2</span></div>
+          <div class="resistance">Resistência</div>
+          <div class="retreat-cost">Recuo <span>{{objectSquirtle.order}}</span></div>
+        </div>
+        
+        <!-- Informações de copyright -->
+        <div class="card-info">
+          <div class="card-number">IL 41/202 ©2023</div>
+          <div class="card-rarity">www.pokemon.com</div>
+        </div>
       </div>
+      
+      <!-- Verso do card -->
       <div class="card__body card__body--back"></div>
     </div>
-  </article>
+  </div>
+  
+  <!-- Card para Pikachu (tipo elétrico) -->
+  <div class="card" *ngIf="objectPikachu.name === 'Pikachu'">
+    <div class="card__inner">
+      <!-- Frente do card -->
+      <div class="card__body card__body--front--pikachu">
+        <!-- Cabeçalho com nome e HP -->
+        <div class="card-header">
+          <div class="pokemon-name">{{objectPikachu.name}}</div>
+          <div class="pokemon-hp">{{objectPikachu.stats[5].stat.name}} <span class="energy-icon electric"></span></div>
+        </div>
+        
+        <!-- Container da imagem -->
+        <div class="card-image-container">
+          <img src="assets/images/image-pikachu.jpg" alt="" class="pokemon-image">
+        </div>
+        
+        <!-- Seção de ataques -->
+        <div class="card-attacks">
+          <div class="attack">
+            <div class="attack-name">{{objectPikachu.moves[0].move.name}}</div>
+            <div class="attack-description">Durante o próximo turno do seu oponente, os ataques do Pokémon Defensor causarão 30 pontos de dano a menos.</div>
+          </div>
+          
+          <div class="attack">
+            <div class="attack-cost">
+              <img src="assets/images/energy-electric.png" alt="" class="pokemon-image-energy">
+              <img src="assets/images/energy-electric.png" alt="" class="pokemon-image-energy">
+            </div>
+            <div class="attack-name">{{objectPikachu.moves[1].move.name}}</div>
+            <div class="attack-damage">30</div>
+          </div>
+        </div>
+        
+        <!-- Rodapé -->
+        <div class="card-footer">
+          <div class="weakness">Fraqueza <span>x2</span></div>
+          <div class="resistance">Resistência</div>
+          <div class="retreat-cost">Recuo <span>{{objectPikachu.order}}</span></div>
+        </div>
+        
+        <!-- Informações de copyright -->
+        <div class="card-info">
+          <div class="card-number">IL 41/202 ©2023</div>
+          <div class="card-rarity">www.pokemon.com</div>
+        </div>
+      </div>
+      
+      <!-- Verso do card -->
+      <div class="card__body card__body--back"></div>
+    </div>
+  </div>
+  
+  <!-- Card para Mewtwo (tipo psíquico) -->
+  <div class="card" *ngIf="objectMewto.name === 'Mewtwo'">
+    <div class="card__inner">
+      <!-- Frente do card -->
+      <div class="card__body card__body--front--mewtwo">
+        <!-- Cabeçalho com nome e HP -->
+        <div class="card-header">
+          <div class="pokemon-name">{{objectMewto.name}}</div>
+          <div class="pokemon-hp">{{objectMewto.stats[5].stat.name}} <span class="energy-icon psychic"></span></div>
+        </div>
+        
+        <!-- Container da imagem -->
+        <div class="card-image-container">
+          <img src="assets/images/image-mewtwo.jpg" alt="" class="pokemon-image">
+        </div>
+        
+        <!-- Seção de ataques -->
+        <div class="card-attacks">
+          <div class="attack">
+            <div class="attack-name">{{objectMewto.moves[0].move.name}}</div>
+            <div class="attack-description">Durante o próximo turno do seu oponente, os ataques do Pokémon Defensor causarão 30 pontos de dano a menos.</div>
+          </div>
+          
+          <div class="attack">
+            <div class="attack-cost">
+              <img src="assets/images/energy-psychic.png" alt="" class="pokemon-image-energy">
+              <img src="assets/images/energy-psychic.png" alt="" class="pokemon-image-energy">
+            </div>
+            <div class="attack-name">{{objectMewto.moves[1].move.name}}</div>
+            <div class="attack-damage">30</div>
+          </div>
+        </div>
+        
+        <!-- Rodapé -->
+        <div class="card-footer">
+          <div class="weakness">Fraqueza <span>x2</span></div>
+          <div class="resistance">Resistência</div>
+          <div class="retreat-cost">Recuo <span>{{objectMewto.order}}</span></div>
+        </div>
+        
+        <!-- Informações de copyright -->
+        <div class="card-info">
+          <div class="card-number">IL 41/202 ©2023</div>
+          <div class="card-rarity">www.pokemon.com</div>
+        </div>
+      </div>
+      
+      <!-- Verso do card -->
+      <div class="card__body card__body--back"></div>
+    </div>
+  </div>
+  
+  <!-- Áudio de fundo (mantido do código original) -->
+  <audio src="assets/audio/pokemon-abertura.mp3"></audio>
 </div>
