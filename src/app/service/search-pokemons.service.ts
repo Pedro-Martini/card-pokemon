@@ -13,12 +13,7 @@ const API_URL = environment.apiUrl;
 export class SearchPokemonsService {
 
   constructor(private http: HttpClient) { }
-
-  searchPokemonMewtwo(): Observable<ResultPokemons>{
-    const result = this.http.get<ResultPokemons>(API_URL + 'pokemon/mewtwo')
-    return result
-  }
-
+  
   searchPokemonSquirtle(): Observable<ResultPokemons>{
     const result = this.http.get<ResultPokemons>(API_URL + 'pokemon/squirtle')
     return result
@@ -28,5 +23,9 @@ export class SearchPokemonsService {
     const result = this.http.get<ResultPokemons>(API_URL + 'pokemon/pikachu')
     return result
   }
-
+  
+  searchPokemonMewtwo(): Observable<ResultPokemons>{
+    const result = this.http.get<ResultPokemons>(API_URL + 'pokemon/mewtwo')
+    return result
+  }
 }

@@ -1,51 +1,49 @@
-<div class="container">
+<div class="container text-center">
   <audio src="assets/audio/pokemon-abertura.mp3"></audio>
+
   <article class="card">
     <div class="card__inner">
       <div class="card__body card__body--front--squirtle">
-        <div class="name-pokemon">
-          <span>
-            {{objectMewto.name}}
-          </span>
-        </div>
-        <div class="image__water__pokemon">
-          <div class="image-pokemon">
-            <img src="assets/images/image-squirtle.jpg" alt="" class="pokemon-image">
+
+        <div class="row">
+          <div class="col">
+            <div class="pokemon">
+              <span class="pokemon-name">
+                {{objectSquirtle.name}}
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card__body card__body--back">
 
-      </div>
-    </div>
-  </article>
-
-  <article class="card">
-    <div class="card__inner">
-      <div class="card__body card__body--front--pikachu">
-
-        <div class="image-pokemon">
-          <img src="assets/images/image-pikachu.jpg" alt="" class="pokemon-image">
+        <div class="row">
+          <div class="col">
+            <div class="image__water__pokemon">
+              <div class="image-pokemon">
+                <img src="assets/images/image-squirtle.jpg" alt="" class="img-fluid pokemon-image">
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card__body card__body--back">
 
-      </div>
-    </div>
-  </article>
-
-  <article class="card">
-    <div class="card__inner">
-      <div class="card__body card__body--front--mewtwo">
-        <div class="image-pokemon">
-          <img src="assets/images/image-mewtwo.jpg" alt="" class="pokemon-image">
+        <div class="row">
+          <div class="moves">
+            <div class="col">
+              <img src="assets/images/energy-water.png" alt="" class="pokemon-image-energy">
+            </div>
+            <div class="col">
+              <span class="move-name">
+                {{objectSquirtle.moves[16].move.name}}
+              </span>
+            </div>
+            <div class="col"></div>
+            <span class="move-order">
+              {{objectSquirtle.order}}
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="card__body card__body--back">
 
       </div>
+      <div class="card__body card__body--back"></div>
     </div>
   </article>
-
 </div>
-
