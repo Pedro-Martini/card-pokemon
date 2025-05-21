@@ -1,13 +1,13 @@
 <div class="container">
   <!-- Card para Squirtle (tipo água) -->
-  <div class="card">
+  <div class="card" *ngIf="objectSquirtle">
     <div class="card__inner">
       <!-- Frente do card -->
       <div class="card__body card__body--front--squirtle">
         <!-- Cabeçalho com nome e HP -->
         <div class="card-header">
-          <div class="pokemon-name">{{objectSquirtle.name}}</div>
-          <div class="pokemon-hp">{{objectSquirtle.weight}} <span class="energy-icon water"></span></div>
+          <div class="pokemon-name">{{objectSquirtle?.name}}</div>
+          <div class="pokemon-hp">{{objectSquirtle?.weight}} <span class="energy-icon water"></span></div>
         </div>
         
         <!-- Container da imagem -->
@@ -18,7 +18,7 @@
         <!-- Seção de ataques -->
         <div class="card-attacks">
           <div class="attack">
-            <div class="attack-name">{{objectSquirtle.moves[0].move.name}}</div>
+            <div class="attack-name">{{objectSquirtle?.moves && objectSquirtle.moves[0]?.move?.name}}</div>
             <div class="attack-description">Durante o próximo turno do seu oponente, os ataques do Pokémon Defensor causarão 30 pontos de dano a menos.</div>
           </div>
           
@@ -27,7 +27,7 @@
               <img src="assets/images/energy-water.png" alt="" class="pokemon-image-energy">
               <img src="assets/images/energy-water.png" alt="" class="pokemon-image-energy">
             </div>
-            <div class="attack-name">{{objectSquirtle.moves[1].move.name}}</div>
+            <div class="attack-name">{{objectSquirtle?.moves && objectSquirtle.moves[1]?.move?.name}}</div>
             <div class="attack-damage">30</div>
           </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="card-footer">
           <div class="weakness">Fraqueza <span>x2</span></div>
           <div class="resistance">Resistência</div>
-          <div class="retreat-cost">Recuo <span>{{objectSquirtle.order}}</span></div>
+          <div class="retreat-cost">Recuo <span>{{objectSquirtle?.order}}</span></div>
         </div>
         
         <!-- Informações de copyright -->
@@ -52,14 +52,14 @@
   </div>
   
   <!-- Card para Pikachu (tipo elétrico) -->
-  <div class="card">
+  <div class="card" *ngIf="objectPikachu">
     <div class="card__inner">
       <!-- Frente do card -->
       <div class="card__body card__body--front--pikachu">
         <!-- Cabeçalho com nome e HP -->
         <div class="card-header">
-          <div class="pokemon-name">{{objectPikachu.name}}</div>
-          <div class="pokemon-hp">{{objectPikachu.weight}} <span class="energy-icon electric"></span></div>
+          <div class="pokemon-name">{{objectPikachu?.name}}</div>
+          <div class="pokemon-hp">{{objectPikachu?.weight}} <span class="energy-icon electric"></span></div>
         </div>
         
         <!-- Container da imagem -->
@@ -70,7 +70,7 @@
         <!-- Seção de ataques -->
         <div class="card-attacks">
           <div class="attack">
-            <div class="attack-name">{{objectPikachu.moves[0].move.name}}</div>
+            <div class="attack-name">{{objectPikachu?.moves && objectPikachu.moves[0]?.move?.name}}</div>
             <div class="attack-description">Durante o próximo turno do seu oponente, os ataques do Pokémon Defensor causarão 30 pontos de dano a menos.</div>
           </div>
           
@@ -79,7 +79,7 @@
               <img src="assets/images/energy-electric.png" alt="" class="pokemon-image-energy">
               <img src="assets/images/energy-electric.png" alt="" class="pokemon-image-energy">
             </div>
-            <div class="attack-name">{{objectPikachu.moves[1].move.name}}</div>
+            <div class="attack-name">{{objectPikachu?.moves && objectPikachu.moves[1]?.move?.name}}</div>
             <div class="attack-damage">30</div>
           </div>
         </div>
@@ -88,7 +88,7 @@
         <div class="card-footer">
           <div class="weakness">Fraqueza <span>x2</span></div>
           <div class="resistance">Resistência</div>
-          <div class="retreat-cost">Recuo <span>{{objectPikachu.order}}</span></div>
+          <div class="retreat-cost">Recuo <span>{{objectPikachu?.order}}</span></div>
         </div>
         
         <!-- Informações de copyright -->
@@ -104,14 +104,14 @@
   </div>
   
   <!-- Card para Mewtwo (tipo psíquico) -->
-  <div class="card">
+  <div class="card" *ngIf="objectMewto">
     <div class="card__inner">
       <!-- Frente do card -->
       <div class="card__body card__body--front--mewtwo">
         <!-- Cabeçalho com nome e HP -->
         <div class="card-header">
-          <div class="pokemon-name">{{objectMewto.name}}</div>
-          <div class="pokemon-hp">{{objectMewto.weight}} <span class="energy-icon psychic"></span></div>
+          <div class="pokemon-name">{{objectMewto?.name}}</div>
+          <div class="pokemon-hp">{{objectMewto?.weight}} <span class="energy-icon psychic"></span></div>
         </div>
         
         <!-- Container da imagem -->
@@ -122,7 +122,7 @@
         <!-- Seção de ataques -->
         <div class="card-attacks">
           <div class="attack">
-            <div class="attack-name">{{objectMewto.moves[0].move.name}}</div>
+            <div class="attack-name">{{objectMewto?.moves && objectMewto.moves[0]?.move?.name}}</div>
             <div class="attack-description">Durante o próximo turno do seu oponente, os ataques do Pokémon Defensor causarão 30 pontos de dano a menos.</div>
           </div>
           
@@ -131,7 +131,7 @@
               <img src="assets/images/energy-psychic.png" alt="" class="pokemon-image-energy">
               <img src="assets/images/energy-psychic.png" alt="" class="pokemon-image-energy">
             </div>
-            <div class="attack-name">{{objectMewto.moves[1].move.name}}</div>
+            <div class="attack-name">{{objectMewto?.moves && objectMewto.moves[1]?.move?.name}}</div>
             <div class="attack-damage">30</div>
           </div>
         </div>
@@ -140,7 +140,7 @@
         <div class="card-footer">
           <div class="weakness">Fraqueza <span>x2</span></div>
           <div class="resistance">Resistência</div>
-          <div class="retreat-cost">Recuo <span>{{objectMewto.order}}</span></div>
+          <div class="retreat-cost">Recuo <span>{{objectMewto?.order}}</span></div>
         </div>
         
         <!-- Informações de copyright -->
@@ -153,6 +153,11 @@
       <!-- Verso do card -->
       <div class="card__body card__body--back"></div>
     </div>
+  </div>
+  
+  <!-- Mensagem de carregamento -->
+  <div *ngIf="!objectSquirtle && !objectPikachu && !objectMewto" class="loading">
+    Carregando Pokémon...
   </div>
   
   <!-- Áudio de fundo (mantido do código original) -->
